@@ -36,7 +36,6 @@ radial coordinate system. It provides a broad view perspective on the performanc
 most model inputs.
 }
 \examples{
-# Pac-Man Residual plot
 data("cars")
 x <- cars$dist
 y <- cars$speed

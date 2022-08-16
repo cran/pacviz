@@ -16,7 +16,6 @@
 #' @importFrom stats coef lm nls resid predict sigma rstandard median
 #' @importFrom utils packageDescription
 #' @examples
-#' # Pac-Man Residual plot
 #' data("cars")
 #' x <- cars$dist
 #' y <- cars$speed
@@ -101,10 +100,4 @@ pac.resid <- function(x, y, title, taxis, model = lm(y ~ x, data = data.frame(x,
     polar.plot(r, t, rp.type = "s", point.col = "black", point.symbols = 16,add = TRUE)
 
     text(mean(c(abs(divs[3 + 1]), abs(divs[3]))), par("usr")[1] + 0.55 * diff(par("usr")[1:2]), srt=0, labels="Residual Values")
-
-    # Representation of the residual standard deivation
-    mtext(c(parse(text = sprintf("sigma == %.3f*%s", sigma(model), tunit$unit_box))), at = par("usr")[1] +0.05 * diff(par("usr")[1:2]))
-    rect(par("usr")[1] - 0.05 * diff(par("usr")[1:2]), -(par("usr")[1] - 0.05 * diff(par("usr")[1:2])),
-        par("usr")[1] + 0.15 * diff(par("usr")[1:2]), -(par("usr")[1] + 0.01 * diff(par("usr")[1:2])),
-        border = 1)
 }
